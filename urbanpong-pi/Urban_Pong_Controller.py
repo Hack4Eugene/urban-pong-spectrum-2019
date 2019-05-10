@@ -933,7 +933,9 @@ class Controller (threading.Thread):
 
         # this is the light controller. Instantiate within the threaded run method so associated
         # libraries are called from within the same thread of execution. Keeps OLA library happy.
-        self.lighting = Lighting_Controllers.DMX_Pixel_LED()
+        # self.lighting = Lighting_Controllers.DMX_Pixel_LED()
+
+        self.lighting = Lighting_Controllers.Serial_Pixel_LED('/dev/ttyAMC0')
 
         # TODO: add functiality to change games
         self.game.initialize()

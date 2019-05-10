@@ -47,6 +47,31 @@ class Lighting_Controller:
     def update_sequence(self, sequence, delays, repetitions):
         pass
 
+    def set_origin(self, new_origin):
+        pass
+
+    def fade(self, location, color, duration):
+        pass
+
+
+class Serial_Pixel_LED(Lighting_Controller):
+    def __init__(self, port):
+        import serial
+        self.ser = serial.Serial(port)
+
+    def update(self, array):
+        self.ser.write(array);
+        pass
+
+    def update_sequence(self, sequence, delays, repetitions):
+        pass
+
+    def set_origin(self, new_origin):
+        pass
+
+    def fade(self, location, color, duration):
+        pass
+
 class DMX_Pixel_LED (Lighting_Controller):
 
 
